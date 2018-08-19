@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guid generator</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+
+    <style>
+        #generator {
+            margin: 70px 0;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header class="is-text-center">
+        <h1>Guid Generator</h1>
+        <p>An online GUID generator that rely on WebAssembly and .NET.</p>
+    </header>
+
+    <section class="container">
+        <guid-generator>Loading...</guid-generator>
+    </section>
+
+    <footer>
+        <p class="is-text-center">
+            Browse the source code on <a href="https://github.com/pguilbert/guidgenerator-wasm">Github</a>.
+            <br>
+            <a href="https://twitter.com/GuilbertPaul">@GuilbertPaul</a>
+        </p>
+    </footer>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+</html>

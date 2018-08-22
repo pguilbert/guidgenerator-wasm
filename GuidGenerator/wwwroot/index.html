@@ -11,6 +11,7 @@
     <style>
         #generator {
             margin: 70px 0;
+            display: none;
         }
 
         .container {
@@ -25,7 +26,13 @@
     </header>
 
     <section class="container">
-        <guid-generator>Loading...</guid-generator>
+        <div id="generator">
+            <pre id="guid-placeholder"></pre>
+            <button class="button" id="btn-action-new-guid">Generate a new guid ⚡️</button>
+        </div>
+        <div id="loading-indicator">
+            Loading...
+        </div>
     </section>
 
     <footer>
@@ -36,6 +43,7 @@
         </p>
     </footer>
 
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="loader.js"></script>
+    <script src="generator.js"></script>
 </body>
 </html>

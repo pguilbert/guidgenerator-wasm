@@ -11,8 +11,8 @@
             printEr: function (line) { console.error(line); },
             locateFile: function (fileName) {
                 switch (fileName) {
-                    case 'mono.wasm': return '/_framework/wasm/mono.wasm';
-                    case 'mono.asm.js': return '/_framework/asmjs/mono.asm.js';
+                    case 'mono.wasm': return './_framework/wasm/mono.wasm';
+                    case 'mono.asm.js': return './_framework/asmjs/mono.asm.js';
                     default: return fileName;
                 }
             },
@@ -146,7 +146,7 @@
     function addScriptTagsToDocument() {
         // Load either the wasm or asm.js version of the Mono runtime
         var browserSupportsNativeWebAssembly = typeof WebAssembly !== 'undefined' && WebAssembly.validate;
-        var monoRuntimeUrlBase = '/_framework/' + (browserSupportsNativeWebAssembly ? 'wasm' : 'asmjs');
+        var monoRuntimeUrlBase = './_framework/' + (browserSupportsNativeWebAssembly ? 'wasm' : 'asmjs');
         var monoRuntimeScriptUrl = monoRuntimeUrlBase + '/mono.js';
 
         if (!browserSupportsNativeWebAssembly) {

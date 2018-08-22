@@ -1,6 +1,6 @@
 ﻿(function () {
     initMono(["_framework/_bin/GuidGeneratorClient.dll"], function () {
-        el("loadingIndicator").style.display = "none";
+        el("loading-indicator").style.display = "none";
         el("generator").style.display = "block";
 
         generateAndShowNewGuid(); // Generate one by default.

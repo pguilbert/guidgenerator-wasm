@@ -27,7 +27,21 @@
 
     <section class="container">
         <div id="generator">
-            <label><input type="checkbox" name="ckbUppercase" id="ckbUppercase" value="true"/>Uppercase ?</label>
+            <fieldset>
+                <legend>Options</legend>
+                <p><label><input type="checkbox" name="ckbUppercase" id="ckbUppercase" value="true"/>Uppercase ?</label></p>
+                <p>
+                    <label for="sltStringFormat">Guid format:</label>
+                    <select name="sltStringFormat" id="sltStringFormat">
+                        <option value="D">32 digits separated by hyphens</option>
+                        <option value="N">32 digits</option>
+                        <option value="B">32 digits separated by hyphens, enclosed in braces</option>
+                        <option value="P">32 digits separated by hyphens, enclosed in parentheses</option>
+                        <option value="X">Four hexadecimal values enclosed in braces</option>
+                    </select>
+                </p>
+            </fieldset>
+
             <pre id="guid-placeholder"></pre>
             <button class="button" id="btn-action-new-guid">Generate a new guid ⚡️</button>
         </div>

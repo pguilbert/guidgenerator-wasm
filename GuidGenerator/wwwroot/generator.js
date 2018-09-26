@@ -13,7 +13,8 @@
 
     function generateAndShowNewGuid() {
         var uppercase = el("ckbUppercase").checked ? 1 : 0;
-        var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", ["D", uppercase]);
+        var stringFormat = el("sltStringFormat").value;
+        var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", [stringFormat, uppercase]);
         el("guid-placeholder").innerText = result;
     }
 

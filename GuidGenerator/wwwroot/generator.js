@@ -6,17 +6,21 @@
         generateAndShowNewGuid(); // Generate one by default.
     });
 
-    el("btn-action-new-guid").onclick = function (e) {
-        e.preventDefault();
-        generateAndShowNewGuid();
-    };
-
     function generateAndShowNewGuid() {
         var uppercase = el("ckbUppercase").checked ? 1 : 0;
         var stringFormat = el("sltStringFormat").value;
         var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", [stringFormat, uppercase]);
         el("guid-placeholder").innerText = result;
     }
+
+    var eventHandler = function (e) {
+        e.preventDefault();
+        generateAndShowNewGuid();
+    };
+
+    el("btn-action-new-guid").onclick = eventHandler;
+    el("ckbUppercase").onchange = eventHandler;
+    el("sltStringFormat").onchange = eventHandler;
 
     function el(id) {
         return document.getElementById(id);

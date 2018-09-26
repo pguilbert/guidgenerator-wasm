@@ -12,7 +12,8 @@
     };
 
     function generateAndShowNewGuid() {
-        var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", []);
+        var uppercase = el("ckbUppercase").checked ? 1 : 0;
+        var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", ["D", uppercase]);
         el("guid-placeholder").innerText = result;
     }
 

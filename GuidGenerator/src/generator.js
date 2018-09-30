@@ -1,28 +1,28 @@
-﻿(function () {
-    initMono(["_framework/_bin/GuidGeneratorClient.dll"], function () {
-        el("loading-indicator").style.display = "none";
-        el("generator").style.display = "block";
+﻿import { initMono, invokeMonoMethod } from './loader';
 
-        generateAndShowNewGuid(); // Generate one by default.
-    });
+initMono(["_framework/_bin/GuidGeneratorClient.dll"], function () {
+    el("loading-indicator").style.display = "none";
+    el("generator").style.display = "block";
 
-    function generateAndShowNewGuid() {
-        var uppercase = el("ckbUppercase").checked ? 1 : 0;
-        var stringFormat = el("sltStringFormat").value;
-        var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", [stringFormat, uppercase]);
-        el("guid-placeholder").innerText = result;
-    }
+    generateAndShowNewGuid(); // Generate one by default.
+});
 
-    var eventHandler = function (e) {
-        e.preventDefault();
-        generateAndShowNewGuid();
-    };
+function generateAndShowNewGuid() {
+    var uppercase = el("ckbUppercase").checked ? 1 : 0;
+    var stringFormat = el("sltStringFormat").value;
+    var result = invokeMonoMethod("GuidGeneratorClient", "GuidGeneratorClient", "GuidHelper", "NewGuid", [stringFormat, uppercase]);
+    el("guid-placeholder").innerText = result;
+}
 
-    el("btn-action-new-guid").onclick = eventHandler;
-    el("ckbUppercase").onchange = eventHandler;
-    el("sltStringFormat").onchange = eventHandler;
+var eventHandler = function (e) {
+    e.preventDefault();
+    generateAndShowNewGuid();
+};
 
-    function el(id) {
-        return document.getElementById(id);
-    }
-})();
+el("btn-action-new-guid").onclick = eventHandler;
+el("ckbUppercase").onchange = eventHandler;
+el("sltStringFormat").onchange = eventHandler;
+
+function el(id) {
+    return document.getElementById(id);
+}

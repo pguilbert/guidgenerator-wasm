@@ -1,0 +1,17 @@
+{
+  "name": "guid-generator",
+  "private": true,
+  "version": "1.0.0",
+  "description": "An online GUID generator that rely on WebAssembly and .NET.",
+  "scripts": {
+    "build": "webpack --mode=development --watch",
+    "publish": "webpack --mode=production"
+  },
+  "author": "Paul Guilbert @GuilbertPaul",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
